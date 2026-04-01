@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Alembic
+migrations/versions/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
