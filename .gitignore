@@ -9,9 +9,6 @@ env/
 # Environment
 .env
 
-# Alembic
-migrations/versions/
-
 # IDE
 .vscode/
 .idea/
