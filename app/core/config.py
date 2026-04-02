@@ -15,12 +15,12 @@ class Settings(BaseSettings):
 
     # JWT
     jwt_secret_key: str
-    jwt_algorithm: str = "HS256"
-    jwt_expire_minutes: int = 10080  # 7 days
+    jwt_algorithm: str
+    jwt_expire_minutes: int
 
     # AI thresholds
-    edge_threshold: float = 0.8
-    duplicate_threshold: float = 0.95
+    edge_threshold: float
+    duplicate_threshold: float
 
 
 settings = Settings()
