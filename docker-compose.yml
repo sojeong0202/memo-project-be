@@ -1,0 +1,20 @@
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: memo-project-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-memo_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-memo_password}
+      POSTGRES_DB: ${POSTGRES_DB:-memodb}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-memo_user} -d ${POSTGRES_DB:-memodb}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
